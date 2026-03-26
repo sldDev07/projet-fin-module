@@ -3,7 +3,7 @@ apiVersion: cdi.kubevirt.io/v1beta1
 kind: DataVolume
 metadata:
   name: image-ubuntu-bdd
-  namespace: mon-projet
+  namespace: sld07-dev
 spec:
   source:
     http:
@@ -19,7 +19,7 @@ apiVersion: kubevirt.io/v1
 kind: VirtualMachine
 metadata:
   name: vm3-serveur-bdd
-  namespace: mon-projet
+  namespace: sld07-dev
   labels:
     kubevirt.io/vm: vm3-serveur-bdd
 spec:
@@ -53,7 +53,7 @@ spec:
       networks:
         - name: lan
           multus:
-            networkName: mon-projet/reseau-lan
+            networkName: sld07-dev/reseau-lan
       volumes:
         - name: boot
           dataVolume:
